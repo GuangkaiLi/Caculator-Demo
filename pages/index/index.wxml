@@ -3,27 +3,27 @@
   <view id="calculator">
     <!-- Screen and clear key -->
     <view class="top">
-      <text class="clear">C</text>
-      <view class="screen"></view>
+      <text class="clear" bindtap="clickButton" id="{{clear}}">C</text>
+      <view class="screen">{{ show }}</view>
     </view>
     <view class="keys">
       <!-- operators and other keys -->
-      <text>7</text>
-      <text>8</text>
-      <text>9</text>
-      <text class="operator">+</text>
-      <text>4</text>
-      <text>5</text>
-      <text>6</text>
-      <text class="operator">-</text>
-      <text>1</text>
-      <text>2</text>
-      <text>3</text>
-      <text class="operator">÷</text>
-      <text>0</text>
-      <text>.</text>
-      <text class="eval">=</text>
-      <text class="operator">x</text>
+      <text bindtap="clickButton" id="{{id7}}">7</text>
+      <text bindtap="clickButton" id="{{id8}}">8</text>
+      <text bindtap="clickButton" id="{{id9}}">9</text>
+      <text class="operator" bindtap="clickButton" id="{{plus}}">+</text>
+      <text bindtap="clickButton" id="{{id4}}">4</text>
+      <text bindtap="clickButton" id="{{id5}}">5</text>
+      <text bindtap="clickButton" id="{{id6}}">6</text>
+      <text class="operator" bindtap="clickButton" id="{{substring}}">-</text>
+      <text bindtap="clickButton" id="{{id1}}">1</text>
+      <text bindtap="clickButton" id="{{id2}}">2</text>
+      <text bindtap="clickButton" id="{{id3}}">3</text>
+      <text class="operator" bindtap="clickButton" id="{{divide}}">÷</text>
+      <text bindtap="clickButton" id="{{id0}}">0</text>
+      <text bindtap="clickButton" id="{{dot}}">.</text>
+      <text class="eval" bindtap="clickButton" id="{{equal}}">=</text>
+      <text class="operator" bindtap="clickButton" id="{{multiply}}">x</text>
     </view>
   </view>
 </view>

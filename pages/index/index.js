@@ -4,11 +4,69 @@ const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
+    id0:"0",
+    id1:"1",
+    id2:"2",
+    id3:"3",
+    id4:"4",
+    id5:"5",
+    id6:"6",
+    id7:"7",
+    id8:"8",
+    id9:"9",
+    dot:".",
+    plus:"+",
+    substring:"-",
+    mutiply:"x",
+    divide:"÷",
+    equal:"=",
+    clear:"c",
+    screenData:"",
+    nums:"",
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+
+  clickButton: function (e) {
+    var id = e.target.id;
+    this.data.screenData += id;
+    if (id == "c") {
+      this.data.screenData = ""
+    }
+    var data = this.data.screenData;
+    console.log(data);
+    if (data[data.length-1] == "=") {
+      var num = 0;
+      var strs = "";
+      var opr = "";
+      for (var i=0; i<data.length; i++) {
+        if (data[i] != "+" && data[i] != "-" && data[i] != "x" && data[i] != "÷" && data[i] != "=") {
+          strs += data[i];
+        } else if (data[i] == "=") {
+          if (opr == "+") {
+            num += Number(strs);
+          } else if (opr == "-") {
+            num -= Number(strs);
+          } else if (opr == "x") {
+            num *= Number(strs);
+          } else if (opr == "÷") {
+            num /= Number(strs);
+          }
+        } else {
+          num = Number(strs);
+          strs = "";
+          opr = data[i];
+        }
+      }
+      data += String(num);
+      this.data.screenData = "";
+    }
+    
+    this.setData({
+      show: data
+    });
+  },
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
