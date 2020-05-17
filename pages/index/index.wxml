@@ -1,13 +1,29 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view id="calculator">
+    <!-- Screen and clear key -->
+    <view class="top">
+      <text class="clear">C</text>
+      <view class="screen"></view>
+    </view>
+    <view class="keys">
+      <!-- operators and other keys -->
+      <text>7</text>
+      <text>8</text>
+      <text>9</text>
+      <text class="operator">+</text>
+      <text>4</text>
+      <text>5</text>
+      <text>6</text>
+      <text class="operator">-</text>
+      <text>1</text>
+      <text>2</text>
+      <text>3</text>
+      <text class="operator">÷</text>
+      <text>0</text>
+      <text>.</text>
+      <text class="eval">=</text>
+      <text class="operator">x</text>
+    </view>
   </view>
 </view>
